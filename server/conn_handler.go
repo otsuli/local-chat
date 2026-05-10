@@ -2,8 +2,6 @@ package main
 
 import "net"
 
-func handleConnection(conn net.Conn) {
-	defer conn.Close()
+func HandleConnection(conn net.Conn) {
 
-	// Figure out what I want to do with the connection:
 }
