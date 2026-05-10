@@ -5,5 +5,5 @@ import "net"
 func handleConnection(conn net.Conn) {
 	defer conn.Close()
 
-	// Figure out what I want to do with the connecetion:
+	// Figure out what I want to do with the connection:
 }
