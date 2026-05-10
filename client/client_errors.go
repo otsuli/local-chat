@@ -1,4 +1,4 @@
-package client
+package main
 
 type clientError struct {
 	ErrorMsg  string

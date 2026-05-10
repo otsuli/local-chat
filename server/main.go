@@ -19,7 +19,9 @@ func main() {
 		if err != nil {
 			err := ServerError{ErrorCode: 41, ErrorMsg: "Something went wrong while connecting to port"}
 			fmt.Println(err)
+		} else {
+			go HandleConnection(conn) // Spawn a goroutine. Runs handleConnection(conn) in the background concurrently.
 		}
-		go HandleConnection(conn) // Spawn a goroutine. Runs handleConnection(conn) in the background concurrently.
+
 	}
 }
