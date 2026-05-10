@@ -7,12 +7,6 @@ import (
 
 func main() {
 	listener, err := net.Listen("tcp", ":8080")
-	defer func() {
-		if err := listener.Close(); err != nil {
-			err := ServerError{ErrorCode: 911, ErrorMsg: "Error closing listener"}
-			fmt.Println(err)
-		}
-	}() // () is used to call the anonymous function.
 
 	if err != nil {
 		err := ServerError{ErrorCode: 67, ErrorMsg: "Something went wrong while opening socket"}
