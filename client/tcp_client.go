@@ -38,4 +38,16 @@ func main() {
 		fmt.Println(err)
 	}
 
+	for {
+		var message string
+		fmt.Print("message> ")
+		if _, err := fmt.Scan(&message); err != nil {
+			err := clientError{ErrorCode: 983, ErrorMsg: "Error taking message input"}
+			fmt.Println(err)
+		}
+		if _, err := fmt.Fprintf(conn, message); err != nil {
+			err := clientError{ErrorCode: 238, ErrorMsg: "Error sending message"}
+			fmt.Println(err)
+		}
+	}
 }
