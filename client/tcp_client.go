@@ -37,4 +37,5 @@ func main() {
 		err := clientError{ErrorCode: 48, ErrorMsg: "Error sending username and user ID"}
 		fmt.Println(err)
 	}
+
 }
