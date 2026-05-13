@@ -9,11 +9,10 @@ func initUser() user {
 	var name string
 	var client user
 	fmt.Print("Type your username: ")
-	if _, err := fmt.Scan(&name); err != nil { // Discard other value with '_'
+	if _, err := fmt.Scan(&name); err != nil {
 		err := clientError{ErrorCode: 34, ErrorMsg: "Error initializing client username"}
 		fmt.Println(err)
 	}
-	client = newUser(name)
 	fmt.Println("Client Initialized")
 	return client
 }
@@ -24,6 +23,7 @@ func main() {
 	if err != nil {
 		err := clientError{ErrorCode: 1, ErrorMsg: "Can not connect to client"}
 		fmt.Println(err)
+		return
 	}
 	defer func() {
 		if err := conn.Close(); err != nil {

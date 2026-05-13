@@ -21,5 +21,6 @@ func HandleConnection(conn net.Conn) {
 		}
 		fmt.Println("Packet received from: ", conn.RemoteAddr().String())
 		fmt.Println("Packet contents: ", string(buffer[:n])) // Convert slice to string
+
 	}
 }
